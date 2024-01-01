@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Predict House Price</title>
+    <style>
+        .pred_price{
+            margin:10px auto;
+            width: 100%;
+            text-align: center;
+            border: 0.5px solid black;
+            border-radius: 15px;
+            padding: 10px;
+            background-color: rgb(208, 227, 114);
+        }
+        .price{
+            color: brown;
+        }
+        body{
+            /* background-image: url('images/house.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            height: 100vh;
+            margin: 0; 
+            padding: 0;  */
+            background-color: rgb(158, 234, 208);
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="my-3" style="text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">ENTER THE DETAILS TO KNOW THE HOUSE PRICE</h3>
+
+    <div class="container" >
+        <form method="POST">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="area">Area</label>
+                    <input type="text" class="form-control" id="area" name="area" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="bedroom">Bedrooms</label>
+                    <select class="custom-select" id="bedroom" name="bedroom" required>
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                <label for="bathroom">Bathrooms</label>
+                    <select class="custom-select" id="bathroom" name="bathroom" required>
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="stories">Stories</label>
+                    <select class="custom-select" id="stories" name="stories" required>
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="parking">Parking</label>
+                    <select class="custom-select" id="parking" name="parking" required>
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="unfurnished">Furnishing Status</label>
+                    <select class="custom-select" id="unfurnished" name="unfurnished" required>
+                        <option selected value="0">Furnished</option>
+                        <option value="1">Unfurnished</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3 mb-4">
+                    <label for="basement">Basement</label>
+                    <select class="custom-select" id="basement" name="basement" required>
+                        <option selected value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="hotwaterheating">Hotwater Heating</label>
+                    <select class="custom-select" id="hotwaterheating" name="hotwaterheating" required>
+                        <option selected value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="airconditioning">Airconditioning</label>
+                    <select class="custom-select" id="airconditioning" name="airconditioning" required>
+                        <option selected value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <label for="prefarea">Prefarea</label>
+                    <select class="custom-select" id="prefarea" name="prefarea" required>
+                        <option selected  value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+            
+
+            <button type="submit" class="btn btn-outline-dark">Check_the Price</button>
+        </form>
+
+        {% if price == 0 %}
+            <!-- <h3 class="pred_price">Please Enter the Details to find the house price</h3>      -->
+        {% else %}
+            <h4 class="pred_price">Predicted Price is: <strong class="price">{{price}}</strong></h4>
+        {% endif %}
+    </div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
